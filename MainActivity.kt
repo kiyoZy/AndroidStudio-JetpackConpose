@@ -105,7 +105,7 @@ fun MessageCardPreview() {
         Row(modifier = Modifier.padding(top = 15.dp)) {
             Greeting02("Greeting02")
             MessageCard(
-                msg = Message("題名：お天気は？", "本文：今日は雨ですね！")
+                msg = Message("題名：お天気は？", "本文：今日は晴れのようですね！")
             )
         }
         Greeting03(name = "MaxSize03")
@@ -128,39 +128,6 @@ fun ListPreview() {
 
     }
 
-}
-
-
-@Preview(name = "Click Button Change color", widthDp = 250)
-@Composable
-fun ClickButtonChangeColor() {
-    val expanded = remember { mutableStateOf(true) }
-
-    val mod01 = Modifier
-        .background(
-            color = Color(0xFF12887D),
-            shape = RoundedCornerShape(16.dp)
-        )
-
-    val mod02 = Modifier
-        .background(
-            color = Color.Blue,
-            shape = RoundedCornerShape(16.dp)
-        )
-
-    ElevatedButton(
-        onClick = { expanded.value = !expanded.value },
-
-        colors = ButtonDefaults.textButtonColors(
-            contentColor = Color.White,
-        ),
-        modifier = if (expanded.value) mod01 else mod02,
-    ) {
-        Text(
-            text = if (expanded.value) "壱" else "弐",
-            color = if (expanded.value) Color.Black else Color.White
-        )
-    }
 }
 
 @Preview(name = "Text Disply")
